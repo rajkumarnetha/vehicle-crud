@@ -43,7 +43,7 @@
                      <h4 class="modal-title" id="myModalLabel">Create Item</h4>
                   </div>
                   <div class="modal-body">
-                     <form data-toggle="validator" action="addVehicle" method="POST">
+                     <form data-toggle="validator" action="vehicle" method="POST">
                         <div class="form-group">
                            <label class="control-label" for="title">Type:</label> 
                            <select class="form-control" data-error="Please enter title." name="title" type="text" required>
@@ -167,7 +167,7 @@
          href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
          rel="stylesheet">
       <script type="text/javascript">
-         var url = "getVehicles";
+         var url = "vehicle";
       </script>
       <script src="/js/custom.js"></script>
    </body>

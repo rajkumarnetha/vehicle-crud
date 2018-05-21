@@ -130,7 +130,7 @@ $("body").on("click", ".remove-item", function() {
     var c_obj = $(this).parents("tr");
     $.ajax({
         type: 'delete',
-        url: '/deleteVehicle/' + id,
+        url: '/vehicle/' + id,
     }).done(function(data) {
         c_obj.remove();
         toastr.success('Item Deleted Successfully.', 'Success Alert', {
@@ -160,7 +160,7 @@ $(".crud-submit-edit").click(function(e) {
     e.preventDefault();
 
     var id = global_id;
-    var form_action = "/updateVehicle/"+id;
+    var form_action = "/vehicle/"+id;
     var type = $("#edit-item").find("input[name='title']").val();
     var name = $("#edit-item").find("textarea[name='description']").val();
 

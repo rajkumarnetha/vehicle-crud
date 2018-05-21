@@ -22,13 +22,13 @@ public class VehicleRestController implements CommandLineRunner {
 	@Autowired
 	VehicleDAORepository repository;
 
-	@RequestMapping("/getVehicles")
+	@RequestMapping("/vehicle")
 	@ResponseBody
 	Object[] getVehicle() {
 		return repository.findAll().toArray();
 	}
 
-	@RequestMapping(value = "/addVehicle", method = RequestMethod.POST)
+	@RequestMapping(value = "/vehicle", method = RequestMethod.POST)
 	@ResponseBody
 	String addVehicle(@RequestParam String type, 
             @RequestParam String name) {		
@@ -36,14 +36,14 @@ public class VehicleRestController implements CommandLineRunner {
 		return "ok";
 	}
 
-	@RequestMapping(value = "/deleteVehicle/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/vehicle/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
 	String deleteVehicle(@PathVariable("id") int id) {
 		repository.deleteById(id);
 		return "ok";
 	}
 
-	@RequestMapping(value = "/updateVehicle/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/vehicle/{id}", method = RequestMethod.PUT)
 	@ResponseBody
 	String updateVehicle(@PathVariable("id") long id, 
             @RequestParam String type, 
